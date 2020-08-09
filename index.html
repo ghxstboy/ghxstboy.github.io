@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHXSTBOY</title>
+    <title>GHXSTBOY / ゴーストボーイ</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 </head>
@@ -59,7 +59,7 @@
         /*margin-left: 30px;*/
         margin-top: 30px;
 
-        animation-duration: 1.25s;
+        animation-duration: 2s;
         animation-delay: 0.45s;
     }
 
@@ -79,7 +79,7 @@
         line-height: 30px !important;
 
         animation-duration: 4s;
-        animation-delay: 1s;
+        animation-delay: 1.4s;
     }
 
     .blackscreen {
@@ -91,6 +91,7 @@
 
         background-color: black;
         opacity: 0;
+        visibility: hidden;
 
         animation: blackscreenfade 2s;
         animation-iteration-count: 1;
@@ -99,15 +100,95 @@
     @keyframes blackscreenfade {
         from {
             opacity: 1;
+            visibility: visible;
         }
 
         to {
             opacity: 0;
         }
     }
+
+    #header {
+        position: fixed;
+        width: 100%;
+    }
+
+    #header ul {
+        list-style-type: none;
+
+        padding: 0;
+        margin: 0;
+
+        float: right;
+
+        margin-right: 24px;
+    }
+
+    #header ul li {
+        display: inline;
+        float: right;
+
+        padding: 30px 10px;
+    }
+
+    #header ul li a {
+        text-decoration: none;
+        padding: 5px;
+
+        font-size: 1.3em;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
+
+        color: white;
+
+        border-bottom: 0px solid black;
+        transition: 0.1s;
+
+        cursor: pointer;
+    }
+
+    #header ul li a:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .cat-selected {
+        border-bottom: 1px solid white !important;
+    }
+
+    #header-logo {
+        text-decoration: none;
+
+        font-size: 1.3em;
+        font-family: 'Heebo', sans-serif;
+        font-weight: 300;
+
+        color: white;
+
+        border-bottom: 0px solid black;
+        transition: 0.1s;
+
+        cursor: pointer;
+
+        padding: 5px 0px;
+        position: absolute;
+
+        margin-left: 30px;
+
+        margin-top: 20px;
+    }
+
 </style>
 
 <body>
+    <div id="header">
+        <a id="header-logo" class="cat-selected">ゴーストボーイ</a>
+        <ul>
+            <li><a>Contact</a></li>
+            <li><a>Gallery</a></li>
+            <li><a>My Work</a></li>
+            <li><a>About me</a></li>
+        </ul>
+    </div>
     <div id="content">
         <div class="page" id="page-main">
             <div id="main-text">
@@ -124,4 +205,6 @@
 
     <div class="blackscreen"></div>
 
-</body></html>
+</body>
+
+</html>
