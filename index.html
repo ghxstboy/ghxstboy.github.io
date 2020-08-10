@@ -15,6 +15,13 @@
     body {
         margin: 0;
         background-color: gray;
+
+        --ms-overflow-style: none;
+        --scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
     }
 
     .page {
@@ -93,7 +100,7 @@
         opacity: 0;
         visibility: hidden;
 
-        animation: blackscreenfade 2s;
+        animation: blackscreenfade 4s cubic-bezier(.5, .0, 1, 1);
         animation-iteration-count: 1;
     }
 
@@ -177,6 +184,33 @@
         margin-top: 20px;
     }
 
+    .scroll-btn {
+        width: 48px;
+        height: 48px;
+        /*background-color: red;*/
+        border-radius: 50px;
+        fill: rgba(255, 255, 255, 0.5);
+
+        display: block;
+        position: absolute;
+        bottom: 50px;
+
+        left: calc(50% - 22px);
+
+        transition: .5s;
+    }
+
+    .scroll-btn:hover {
+        transform: translateY(-4px);
+    }
+
+    #page-about-me {
+        height: 100vh;
+        min-height: 100vh;
+
+        background-color: red;
+    }
+
 </style>
 
 <body>
@@ -196,8 +230,12 @@
                 <a id="mt-name" class="animate__animated animate__fadeInUp">I'm TJ <span id="mt-nickname">(Tim)</span></a>
                 <a id="mt-sub" class="animate__animated animate__fadeIn">DEVELOPER x DESIGNER</a>
             </div>
+
+            <div class="scroll-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                    <path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path>
+                </svg></div>
         </div>
-        <div class="page"></div>
+        <div class="page" id="page-about-me"></div>
         <div class="page"></div>
         <div class="page"></div>
         <div class="page"></div>
